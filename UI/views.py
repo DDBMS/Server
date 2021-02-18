@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
-from .models import Ducument
-from .forms import FocumentForm
+from .models import Document
+from .forms import DocumentForm
 # Create your views here.
 
 def my_view(request):
+    return render(request,"list.html",{})
     print(f"Great! ")
     message = "Upload as many files as you want!"
     #Handle file upload
