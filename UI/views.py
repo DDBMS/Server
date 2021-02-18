@@ -5,7 +5,7 @@ from .forms import DocumentForm
 
 def my_view(request):
     print(f"Great!")
-    message = 'Upload as many files as you want!'
+    message = 'Upload files you want'
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
