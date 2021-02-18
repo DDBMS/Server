@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp.apps.MyappConfig',
+
+    #created
+    'UI',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = 'service.urls'
 
 TEMPLATES = [
     {
