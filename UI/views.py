@@ -6,21 +6,21 @@ from .forms import DocumentForm
 def my_view(request):
     print(f"Great!")
     message = 'Upload files you want'
-    # Handle file upload
+    # 處理上傳的資料
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             newdoc = Document(docfile=request.FILES['docfile'])
             newdoc.save()
 
-            # Redirect to the document list after POST
+            # 上傳資料後重整
             return redirect('my-view')
         else:
             message = 'The form is not valid. Fix the following error:'
     else:
-        form = DocumentForm()  # An empty, unbound form
+        form = DocumentForm()  #空白的form
 
-    # Load documents for the list page
+    # 
     documents = Document.objects.all()
 
     # Render list page with the documents and the form
